@@ -3,50 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Calestia</title>
+    <title>LynnnMenu Downloads</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+            font-family: 'Arial', sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
             color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
         .container {
             max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
-        h1 {
-            color: #4CAF50;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
         }
         a {
-            color: #4CAF50;
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4285f4; 
             text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
         }
         a:hover {
+            background-color: #337ab7; 
+        }
+        .discord {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #333;
+        }
+        .discord a {
+            color: #7289da;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .discord a:hover {
             text-decoration: underline;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .discord-logo {
+            width: 24px;
+            height: 24px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Calestia</h1>
-        <p>Thank you for visiting Calestia! This is a placeholder page. You can update this page with more information about your project or service.</p>
-        <p>To get started, you might want to check out the following:</p>
-        <ul>
-            <li><a href="https://your-webserver-url.com/menu.dll">Download the DLL</a></li>
-            <li><a href="https://your-webserver-url.com/docs">Documentation</a></li>
-        </ul>
-        <p>If you have any questions, feel free to <a href="mailto:support@calestia.com">contact us</a>.</p>
+        <h1>Welcome to LynnnMenu Downloads</h1>
+        <p>Download the latest DLL and version information below:</p>
+        <div class="download-buttons">
+            <a href="Lynnnmenu.dll" download>Lynnnmenu.dll</a>
+            <a href="version.json" download>version.json</a>
+        </div>
+
+        <div class="discord">
+            <h2>Join Our Discord Community!</h2>
+            <p>For support, updates, and more, join us on Discord:</p>
+            <a href="https://discord.gg/fP3SEZ6t2n" target="_blank">
+                <img src="https://i.pinimg.com/originals/2c/e0/79/2ce079260cd5708deeb3d117e589881c.png" alt="Discord Logo" class="discord-logo">
+                Join our Discord Server
+            </a>
+        </div>
     </div>
 </body>
 </html>
