@@ -1,5 +1,5 @@
 {
-    "file": "Lynnnmenu.dll",
-    "version": "1.0.0",
-    "version_machine": 100
+    "file": "Lynnnmenu.dll", // Nama fail DLL yang ingin anda suntik
+    "version": "0.1.3", // Nombor versi (terpulang kepada anda)
+    "version_machine": 13 // Nombor versi untuk perbandingan (terpulang kepada anda)
 }
