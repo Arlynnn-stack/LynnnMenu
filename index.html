@@ -3,92 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LynnnMenu Downloads</title>
+    <title>Surprise untuk Kekasih</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
             text-align: center;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            overflow: hidden;
         }
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        .download-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 20px;
-        }
-        a {
-            display: inline-block;
-            padding: 12px 25px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #4285f4; 
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s ease;
-        }
-        a:hover {
-            background-color: #337ab7; 
-        }
-        .discord {
-            margin-top: 30px;
+        .button {
+            padding: 10px 20px;
             font-size: 18px;
-            color: #333;
+            margin: 10px;
+            cursor: pointer;
         }
-        .discord a {
-            color: #7289da;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 25px;
-            background-color: #fff;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: box-shadow 0.3s ease;
+        .love {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: float 3s infinite;
         }
-        .discord a:hover {
-            text-decoration: underline;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .discord-logo {
-            width: 24px;
-            height: 24px;
+        @keyframes float {
+            0% {transform: translateY(0);}
+            50% {transform: translateY(-20px);}
+            100% {transform: translateY(0);}
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to LynnnMenu Downloads</h1>
-        <p>Download the latest DLL and version information below:</p>
-        <div class="download-buttons">
-            <a href="Lynnnmenu.dll" download>Lynnnmenu.dll</a>
-            <a href="version.json" download>version.json</a>
-        </div>
-
-        <div class="discord">
-            <h2>Join Our Discord Community!</h2>
-            <p>For support, updates, and more, join us on Discord:</p>
-            <a href="https://discord.gg/fP3SEZ6t2n" target="_blank">
-                <img src="https://i.pinimg.com/originals/2c/e0/79/2ce079260cd5708deeb3d117e589881c.png" alt="Discord Logo" class="discord-logo">
-                Join our Discord Server
-            </a>
-        </div>
+    <h1>Hai kaseh bb, jom kawen nak tak?</h1>
+    <img src="URL_GAMBAR_KEKASIH" alt="Gambar Kekasih" width="300" style="border-radius: 10px;">
+    <div>
+        <button class="button" onclick="showLove()">Nak</button>
+        <button class="button" id="takNak" onmouseover="moveButton()">Tak Nak</button>
     </div>
+    <div id="loveContainer"></div>
+
+    <script>
+        function moveButton() {
+            const button = document.getElementById('takNak');
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.position = 'absolute';
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+
+        function showLove() {
+            const loveContainer = document.getElementById('loveContainer');
+            loveContainer.innerHTML = '<h2>Yeaay!</h2>';
+            for (let i = 0; i < 20; i++) {
+                const love = document.createElement('div');
+                love.className = 'love';
+                love.textContent = '❤️';
+                love.style.left = Math.random() * window.innerWidth + 'px';
+                love.style.top = Math.random() * window.innerHeight + 'px';
+                loveContainer.appendChild(love);
+            }
+        }
+    </script>
 </body>
 </html>
