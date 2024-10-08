@@ -74,7 +74,7 @@
 
 <div class="product">
     <h2>Popia Bergedil</h2>
-    <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266071523950794/IMG-20241009-WA0026.jpg?ex=6706bf63&is=67056de3&hm=e43f2e757e787f5fd5e51c877e03dedea030c640993a08e756c5d48b164c111c&"> <!-- Gantikan dengan URL gambar Popia Bergedil -->
+    <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266071523950794/IMG-20241009-WA0026.jpg?ex=6706bf63&is=67056de3&hm=e43f2e757e787f5fd5e51c877e03dedea030c640993a08e756c5d48b164c111c&" alt="Popia Bergedil"> <!-- Gantikan dengan URL gambar Popia Bergedil -->
     <label>
         <input type="radio" name="variation" value="Ayam" checked> Ayam (RM5.00/6 pcs)
     </label>
@@ -131,11 +131,4 @@
     function checkout() {
         const orderDetails = cart.map(item => `${item.name} (${item.variation}) - RM${item.price}`).join('\n');
         const totalWithCOD = total + 4.00;
-        const message = `Hi, saya ingin membuat pesanan berikut:\n${orderDetails}\nCaj COD: RM4.00\nJumlah keseluruhan: RM${totalWithCOD.toFixed(2)}`;
-        const whatsappUrl = `https://wa.me/+601125249606?text=${encodeURIComponent(message)}`; // Gantikan "0195778954" dengan nombor WhatsApp anda
-        window.open(whatsappUrl, '_blank');
-    }
-</script>
-
-</body>
-</html>
+        const message = `Hi, saya ingin membuat pesanan berikut:\n${orderDetails}\nCaj COD: RM4
