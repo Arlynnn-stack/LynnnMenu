@@ -3,63 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surprise untuk Kekasih</title>
+    <title>Kedai Popia Begedil</title>
     <style>
         body {
-            text-align: center;
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            overflow: hidden;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .product {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .product img {
+            max-width: 150px;
+            border-radius: 8px;
+        }
+        .details {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .details h2 {
+            margin: 0;
+            color: #007bff;
+        }
+        .details p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .details input {
+            width: 50px;
+            padding: 5px;
+            margin-right: 10px;
         }
         .button {
+            display: inline-block;
             padding: 10px 20px;
-            font-size: 18px;
-            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
         }
-        .love {
-            position: absolute;
-            color: red;
-            font-size: 24px;
-            animation: float 3s infinite;
-        }
-        @keyframes float {
-            0% {transform: translateY(0);}
-            50% {transform: translateY(-20px);}
-            100% {transform: translateY(0);}
+        .button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <h1>Hai kaseh bb, jom kawen nak tak?</h1>
-    <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293220066099200061/cecfb667b36e42de11f86e720b882730.jpg?ex=6706948a&is=6705430a&hm=c9677c4943e10e92d42be8e989ed81d5b19ffadfca099adb8e3769d795abb4d3&" alt="Gambar Kekasih" width="300" style="border-radius: 10px;">
-    <div>
-        <button class="button" onclick="showLove()">Nak</button>
-        <button class="button" id="takNak" onmouseover="moveButton()">Tak Nak</button>
+    <div class="container">
+        <h1>Kedai Popia Begedil</h1>
+        <div class="product">
+            <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293225112266477650/IMG-20241008-WA0000.jpg?ex=6706993d&is=670547bd&hm=595ba0898ac266b8458f0a4cab381cb1b0e1551c4ae6bff53ed04d8cee89f6f8&" alt="Popia Begedil">
+            <div class="details">
+                <h2>Popia Begedil</h2>
+                <p>Harga: RM7.00 per pax</p>
+                <input type="number" id="quantity" value="1" min="1">
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
     </div>
-    <div id="loveContainer"></div>
 
     <script>
-        function moveButton() {
-            const button = document.getElementById('takNak');
-            const x = Math.random() * (window.innerWidth - button.offsetWidth);
-            const y = Math.random() * (window.innerHeight - button.offsetHeight);
-            button.style.position = 'absolute';
-            button.style.left = x + 'px';
-            button.style.top = y + 'px';
-        }
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            const pricePerPax = 7.00;
+            const codCharge = 4.00;
+            const totalPrice = (pricePerPax * quantity) + codCharge;
+            const message = `Order: Popia Begedil\nQuantity: ${quantity} pax\nTotal Price: RM${totalPrice.toFixed(2)}\nCOD Charge: RM${codCharge.toFixed(2)}`;
 
-        function showLove() {
-            const loveContainer = document.getElementById('loveContainer');
-            loveContainer.innerHTML = '<h2>Yeaay!</h2>';
-            for (let i = 0; i < 20; i++) {
-                const love = document.createElement('div');
-                love.className = 'love';
-                love.textContent = '❤️';
-                love.style.left = Math.random() * window.innerWidth + 'px';
-                love.style.top = Math.random() * window.innerHeight + 'px';
-                loveContainer.appendChild(love);
-            }
+            const whatsappUrl = `https://wa.me/60195778954?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
         }
     </script>
 </body>
