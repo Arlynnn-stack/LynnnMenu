@@ -132,7 +132,7 @@
         const orderDetails = cart.map(item => `${item.name} (${item.variation}) - RM${item.price}`).join('\n');
         const totalWithCOD = total + 4.00;
         const message = `Hi, saya ingin membuat pesanan berikut:\n${orderDetails}\nCaj COD: RM4.00\nJumlah keseluruhan: RM${totalWithCOD.toFixed(2)}`;
-        const whatsappUrl = `https://wa.me/01125249606?text=${encodeURIComponent(message)}`; // Gantikan "0195778954" dengan nombor WhatsApp anda
+        const whatsappUrl = `https://wa.me/+601125249606?text=${encodeURIComponent(message)}`; // Gantikan "0195778954" dengan nombor WhatsApp anda
         window.open(whatsappUrl, '_blank');
     }
 </script>
