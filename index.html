@@ -58,13 +58,32 @@
     <main>
         <p>Download the latest version of LynnnMenu DLL for GTA V modding.</p>
         <a href="LynnnMenu.dll" download>Download DLL</a>
-        <p>Current Version:</p>
-        <a href="version.txt" download>View Version</a>
+        <p>Current Version: <span id="version">Loading...</span></p>
     </main>
 
     <footer>
         <p>&copy; 2024 LynnnMenu - All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Fetch the version from version.json
+        fetch('https://example.com/version.json') // Gantikan dengan URL sebenar
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Update the version display
+                document.getElementById('version').textContent = data.version;
+            })
+            .catch(error => {
+                console.error('Error fetching version:', error);
+                document.getElementById('version').textContent = 'Error loading version';
+            });
+    </script>
 </body>
 </html>
+
 
