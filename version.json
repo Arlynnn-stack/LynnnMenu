@@ -1,4 +1,7 @@
+
 {
-    "version": "1.0.0"
+  "version": "1.0.1",
+  "changelog": "Fixed bugs, improved performance, added new crash function."
 }
+
 
